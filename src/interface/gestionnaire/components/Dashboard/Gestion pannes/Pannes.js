@@ -139,19 +139,19 @@ export default function Pannes() {
         <div className="card-panne4">
           <Item>
             <Typography variant='h6' sx={{color:"green"}}> Coût total des pannes : </Typography> 
-            {tableData.cout_total_panne} Dinars
+            <Typography sx={{fontSize:"15px"}}>{tableData.cout_total_panne} Dinars</Typography>
           </Item>
           <Item>
             <Typography variant='h6' sx={{color:"green"}}> Durée totale des pannes : </Typography>
-            {tableData.duree_total_panne} Heures
+            <Typography sx={{fontSize:"15px"}}>{tableData.duree_total_panne} Heures</Typography>
           </Item>
           <Item> 
             <Typography variant='h6' sx={{color:"green"}}>Nombre des pannes des poubelles<br/> </Typography>
-            {tableData.nbr_panne_poubelle}
+            <Typography sx={{fontSize:"15px"}}>{tableData.nbr_panne_poubelle}</Typography>
           </Item>
           <Item> 
             <Typography variant='h6' sx={{color:"green"}}>Pourcentage<br/></Typography> 
-            {tableData.pourcentage_panne_poubelle} %
+            <Typography sx={{fontSize:"15px"}}>{tableData.pourcentage_panne_poubelle} %</Typography>
           </Item>
         </div>
 
@@ -171,23 +171,23 @@ export default function Pannes() {
               <div className="card-panne5">
                 <Item> 
                   <Typography variant='h6' sx={{color:"green"}}>Nombre des pannes<br/> </Typography>
-                  {tableData.nbr_panne_poubelle}
+                  <Typography sx={{fontSize:"15px"}}>{tableData.nbr_panne_poubelle}</Typography>
                 </Item>
                 <Item> 
                   <Typography variant='h6' sx={{color:"green"}}>Coût total<br/></Typography>
-                  {tableData.cout_panne_poubelles} D
+                  <Typography sx={{fontSize:"15px"}}>{tableData.cout_panne_poubelles} D</Typography>
                 </Item>
                 <Item> 
                   <Typography variant='h6' sx={{color:"green"}}>Coût moyen<br/></Typography>
-                  {tableData.moy_cout_panne_poubelles} D
+                  <Typography sx={{fontSize:"15px"}}>{tableData.moy_cout_panne_poubelles} D</Typography>
                 </Item>
                 <Item> 
                   <Typography variant='h6' sx={{color:"green"}}>Durée totale<br/></Typography>
-                  {tableData.sum_duree_poubelles} Jours
+                  <Typography sx={{fontSize:"15px"}}>{tableData.sum_duree_poubelles} Jours</Typography>
                 </Item>
                 <Item> 
                   <Typography variant='h6' sx={{color:"green"}}>Durée moyenne <br/></Typography>
-                  {tableData.moy_duree_poubelles} Jours
+                  <Typography sx={{fontSize:"15px"}}>{tableData.moy_duree_poubelles} Jours</Typography>
                 </Item>
               </div>
               <div className='card-panne'>
@@ -232,7 +232,7 @@ export default function Pannes() {
                   {tableData.moy_duree_camion} Jours
                 </Item>
               </div>
-              
+
               <div className='card-panne'>
                 <Item>
                   <ChartPanne url='http://127.0.0.1:8000/api/pannes-camion-mois' labelNbr='Nombre panne camion'
