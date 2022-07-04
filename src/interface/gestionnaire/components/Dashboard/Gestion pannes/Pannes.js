@@ -33,11 +33,13 @@ function TabPanel(props) {
     </div>
   );
 }
+
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
 };
+
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
@@ -67,7 +69,7 @@ export  function Right({tableData ,type}){
 
   return(
     <div>     
-      <Box sx={{margin :"-80px 0 0 0"}}>
+      <Box >
         <Grid container spacing={3}>
           <Grid item xs>
             <Tabs value={value1} onChange={handleChange1} aria-label="basic tabs example">
@@ -80,7 +82,8 @@ export  function Right({tableData ,type}){
         {(type==="camion")?
           <>
             <TabPanel value={value1} index={0}>
-              <ChartPanne url='http://127.0.0.1:8000/api/pannes-camion-mois' labelNbr='Nombre panne camion' labelCout='Cout panne camion' titre="nombre pannes totales par mois/année"/>         
+              <ChartPanne url='http://127.0.0.1:8000/api/pannes-camion-mois' labelNbr='Nombre panne camion'
+               labelCout='Cout panne camion' titre="Nombre des pannes totales par mois/année"/>         
             </TabPanel>
             <TabPanel value={value1} index={1}>
               <Typography sx={{color:"green"}}> Filtrage des pannes des camions selon durée et coût :</Typography>
@@ -92,7 +95,8 @@ export  function Right({tableData ,type}){
           </>:
           <>
             <TabPanel value={value1} index={0}>
-              <ChartPanne url='http://127.0.0.1:8000/api/pannes-poubelle-mois' labelNbr='Nombre panne poubelle' labelCout='Cout panne poubelle' titre="nombre pannes totales par mois/année"/>         
+              <ChartPanne url='http://127.0.0.1:8000/api/pannes-poubelle-mois' labelNbr='Nombre panne poubelle'
+               labelCout='Cout panne poubelle' titre="Nombre des pannes totales par mois/année"/>         
             </TabPanel>
             <TabPanel value={value1} index={1}>
               <Typography sx={{color:"green"}}> Filtrage des pannes des poubelles selon durée et coût :</Typography>
@@ -132,38 +136,25 @@ export default function Pannes() {
   if(tableData!==null){
     return (
       <>    
-        <div className="card-panne">       
-          <Item> Coût total des pannes : {tableData.cout_total_panne} Dinars</Item>
-          <Item> Durée totale des pannes : {tableData.duree_total_panne} Heures</Item>
-        </div>
-        <div className="card-panne">
-          <Item> <Typography variant='h6' sx={{color:"green"}}>Nombre des pannes des poubelles<br/> </Typography>{tableData.nbr_panne_poubelle}</Item>
-          <Item> <Typography variant='h6' sx={{color:"green"}}>Pourcentage<br/></Typography> {tableData.pourcentage_panne_poubelle} %</Item>
-        </div>
-        <div className="card-panne">
-          <Item> 
-            <Typography variant='h6' sx={{color:"red"}}>Coût</Typography> 
-            <Grid container spacing={1} >
-              <Grid item sx={{width:"50%"}}>
-                <Item> Coût total:<br/>{tableData.cout_panne_poubelles} D</Item>
-              </Grid>
-              <Grid item sx={{width:"50%"}}>
-                <Item> Coût moyen<br/>{tableData.moy_cout_panne_poubelles} D</Item>
-              </Grid>
-            </Grid>
+        <div className="card-panne4">
+          <Item>
+            <Typography variant='h6' sx={{color:"green"}}> Coût total des pannes : </Typography> 
+            {tableData.cout_total_panne} Dinars
+          </Item>
+          <Item>
+            <Typography variant='h6' sx={{color:"green"}}> Durée totale des pannes : </Typography>
+            {tableData.duree_total_panne} Heures
           </Item>
           <Item> 
-            <Typography variant='h6' sx={{color:"red"}}>Durée</Typography> 
-            <Grid container spacing={1}>
-              <Grid item sx={{width:"50%"}}>
-                <Item>Durée totale :<br/>{tableData.sum_duree_poubelles} Jours</Item>
-              </Grid>
-              <Grid item sx={{width:"50%"}}>
-                <Item>Durée moyenne :<br/> {tableData.moy_duree_poubelles} Jours</Item>
-              </Grid>
-            </Grid>
+            <Typography variant='h6' sx={{color:"green"}}>Nombre des pannes des poubelles<br/> </Typography>
+            {tableData.nbr_panne_poubelle}
+          </Item>
+          <Item> 
+            <Typography variant='h6' sx={{color:"green"}}>Pourcentage<br/></Typography> 
+            {tableData.pourcentage_panne_poubelle} %
           </Item>
         </div>
+
         <Box>
           <Grid container spacing={3}>
             <Grid item xs>
@@ -177,11 +168,41 @@ export default function Pannes() {
         <TabPanel value={value} index={0}>
           <div className='panne-container'>
             <div>
-              {/* lena bech nhot el tableau */}
-              
-            </div>
-            <div className="right">          
-              <Right tableData={tableData} type='poubelle'/> 
+              <div className="card-panne5">
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Nombre des pannes<br/> </Typography>
+                  {tableData.nbr_panne_poubelle}
+                </Item>
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Coût total<br/></Typography>
+                  {tableData.cout_panne_poubelles} D
+                </Item>
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Coût moyen<br/></Typography>
+                  {tableData.moy_cout_panne_poubelles} D
+                </Item>
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Durée totale<br/></Typography>
+                  {tableData.sum_duree_poubelles} Jours
+                </Item>
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Durée moyenne <br/></Typography>
+                  {tableData.moy_duree_poubelles} Jours
+                </Item>
+              </div>
+              <div className='card-panne'>
+                <Item>
+                  <ChartPanne url='http://127.0.0.1:8000/api/pannes-poubelle-mois' labelNbr='Nombre panne poubelle'
+                    labelCout='Cout panne poubelle' titre="Nombre des pannes totales par mois/année"/>  
+                </Item>
+                <Item>   
+                  <Typography sx={{color:"green"}}> Filtrage des pannes des poubelles selon durée et coût :</Typography>
+                  <TopTablePannePoubelle  tableData={tableData}/> 
+                  <Link to="/gestionnaire/pannes-poubelles">
+                    <Button  variant="contained" sx={{marginLeft:"20px"}}  color="primary">Plus d'informations <ArrowRightAltIcon/></Button>
+                  </Link>  
+                </Item> 
+              </div>
             </div>  
           </div>
         </TabPanel>
@@ -189,41 +210,42 @@ export default function Pannes() {
         <TabPanel value={value} index={1}>
           <div className='panne-container'>
             <div>
-              <div className="card-panne">
-                <Item> <Typography variant='h6' sx={{color:"green"}}>Nombre des pannes des camions<br/> </Typography>{tableData.nbr_panne_camion}</Item>
-                <Item> <Typography variant='h6' sx={{color:"green"}}>Pourcentage<br/></Typography> {tableData.pourcentage_panne_camion} %</Item>
+            <div className="card-panne5">
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Nombre des pannes<br/> </Typography>
+                  {tableData.nbr_panne_camion}
+                </Item>
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Coût total<br/></Typography>
+                  {tableData.cout_panne_camions} D
+                </Item>
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Coût moyen<br/></Typography>
+                  {tableData.moy_cout_panne_camions} D
+                </Item>
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Durée totale<br/></Typography>
+                  {tableData.sum_duree_camion} Jours
+                </Item>
+                <Item> 
+                  <Typography variant='h6' sx={{color:"green"}}>Durée moyenne <br/></Typography>
+                  {tableData.moy_duree_camion} Jours
+                </Item>
               </div>
-              <div className="card-panne">
-                <Grid item>
-                  <Item> 
-                    <Typography variant='h6' sx={{color:"red"}}>Coût</Typography> 
-                    <Grid container spacing={1} >
-                      <Grid item sx={{width:"50%"}}>
-                        <Item> Coût total:<br/>{tableData.cout_panne_camions} D</Item>
-                      </Grid>
-                      <Grid item sx={{width:"50%"}}>
-                        <Item> Coût moyen:<br/>{tableData.moy_cout_panne_camions} D</Item>
-                      </Grid>
-                    </Grid>
-                  </Item>
-                </Grid>
-                <Grid item>
-                  <Item> 
-                    <Typography variant='h6' sx={{color:"red"}}>Durée</Typography> 
-                    <Grid container spacing={1}>
-                      <Grid item sx={{width:"50%"}}>
-                        <Item>Durée totale :<br/>{tableData.sum_duree_camion} Jours</Item>
-                      </Grid>
-                      <Grid item sx={{width:"50%"}}>
-                        <Item>Durée moyenne :<br/> {tableData.moy_duree_camion} Jours</Item>
-                      </Grid>
-                    </Grid>
-                  </Item>
-                </Grid>
+              
+              <div className='card-panne'>
+                <Item>
+                  <ChartPanne url='http://127.0.0.1:8000/api/pannes-camion-mois' labelNbr='Nombre panne camion'
+                    labelCout='Cout panne camion' titre="Nombre des pannes totales par mois/année"/>    
+                </Item>
+                <Item>
+                  <Typography sx={{color:"green"}}> Filtrage des pannes des camions selon durée et coût :</Typography>
+                  <TopTablePanneCamion  tableData={tableData}/> 
+                  <Link to="/gestionnaire/pannes-camions">
+                    <Button variant="contained" sx={{marginLeft:"20px"}} color="primary">Plus d'informations<ArrowRightAltIcon/></Button>
+                  </Link> 
+                </Item> 
               </div>
-            </div>
-            <div className="right">  
-              <Right tableData={tableData} type='camion' /> 
             </div>  
           </div>
         </TabPanel> 

@@ -10,7 +10,7 @@ import styled from 'styled-components'
 import { Button , Icon} from 'semantic-ui-react'
 import { BrowserRouter as Router, Link } from "react-router-dom"
 import { IconButton } from '@mui/material';
-import  { FaBars } from 'react-icons/fa'
+import { FaBars } from 'react-icons/fa'
 
 const MobileIcon= styled.div`
   display: none;
@@ -48,13 +48,13 @@ export default function InterfaceInternaute() {
   const [activeItem, setActiveItem] = useState('accueil');
   return (
     <>
-        {width > breakPoint? (
-          <>
-            <InterHeader/>
-            <InterMain/>
-            <Interfooter/>
-          </>
-        ) : (
+      {width > breakPoint? (
+        <>
+          <InterHeader/>
+          <InterMain/>
+          <Interfooter/>
+        </>
+      ) : (
        <>   
         <MobileIcon style={{borderRadius:"5px" , backgroundColor:"#32CD32"}} >
           <IconButton size="medium" onClick={toggleDrawer} > <FaBars style={{color:"white"}}/> </IconButton>
@@ -66,13 +66,27 @@ export default function InterfaceInternaute() {
               <CloseIcon />
             </Button>
             <Container>
-              <Menu.Item as='a' href='#accueil' name='accueil' active={activeItem === 'accueil'}  onClick={() => setActiveItem("accueil")}  ><Icon name='home' /> Accueil </Menu.Item>  
-              <Menu.Item as='a' href='#a-propos' name='a-propos'  active={activeItem === 'a-propos'}  onClick={() => setActiveItem("a-propos")}    ><Icon name='list'/> A Propos</Menu.Item>
-              <Menu.Item as='a' href='#produits' name='produits' active={activeItem === 'produits'}  onClick={() => setActiveItem("produits")}  ><Icon name='cart'/>Produits </Menu.Item>
-              <Menu.Item as='a' href='#statistique' name='statistique'  active={activeItem === 'statistique'}  onClick={() => setActiveItem("statistique")} ><Icon name='dashboard'/> Statistique </Menu.Item>
-              <Menu.Item as='a' href='#mission' name='mission'  active={activeItem === 'mission'}  onClick={() => setActiveItem("mission")}> <Icon name='list alternate outline'/>Mission</Menu.Item>
-              <Menu.Item as='a' href='#contact' name='contact'  active={activeItem === 'contact'}  onClick={() => setActiveItem("contact")}> <Icon name='envelope'/> Contact</Menu.Item>
-              <Menu.Item> <Button as={Link} to="/responsable-etablissement/login"  color='green'>Se connecter</Button> </Menu.Item>
+              <Menu.Item as='a' href='#accueil' name='accueil' active={activeItem === 'accueil'}  onClick={() => setActiveItem("accueil")}  >
+                <Icon name='home' /> Accueil 
+              </Menu.Item>  
+              <Menu.Item as='a' href='#a-propos' name='a-propos'  active={activeItem === 'a-propos'}  onClick={() => setActiveItem("a-propos")}>
+                <Icon name='list'/> A Propos
+              </Menu.Item>
+              <Menu.Item as='a' href='#produits' name='produits' active={activeItem === 'produits'}  onClick={() => setActiveItem("produits")}  >
+                <Icon name='cart'/> Produits 
+              </Menu.Item>
+              <Menu.Item as='a' href='#statistique' name='statistique'  active={activeItem === 'statistique'}  onClick={() => setActiveItem("statistique")} >
+                <Icon name='dashboard'/> Statistiques 
+              </Menu.Item>
+              <Menu.Item as='a' href='#mission' name='mission'  active={activeItem === 'mission'}  onClick={() => setActiveItem("mission")}> 
+                <Icon name='list alternate outline'/>Mission
+              </Menu.Item>
+              <Menu.Item as='a' href='#contact' name='contact'  active={activeItem === 'contact'}  onClick={() => setActiveItem("contact")}> 
+                <Icon name='envelope'/> Contact
+              </Menu.Item>
+              <Menu.Item> 
+                <Button as={Link} to="/responsable-etablissement/login" color='green'>Espace Client</Button> 
+              </Menu.Item>
             </Container>
           </Sidebar>
         </Drawer>

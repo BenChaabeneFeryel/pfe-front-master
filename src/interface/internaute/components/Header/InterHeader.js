@@ -12,6 +12,7 @@ import Logo from "../../../../Global/images/reschool-blanc.png"
 function Item(props){
     return ( <img src={props.item.image} style={{height:"102%", width:"100%"}}/>  )
 }
+
 export default class InterHeader extends Component {
     
     state = {}
@@ -27,6 +28,7 @@ export default class InterHeader extends Component {
         const { children } = this.props
         const { fixed } = this.state
         const { activeItem } = this.state
+
         return (     
             <>        
                 <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>  
@@ -38,15 +40,27 @@ export default class InterHeader extends Component {
                             </h3> 
                         </div>
                         <Container className="menu-header"> 
-                            <Menu.Item as='a' href='#accueil' name='accueil'  active={activeItem === 'accueil'} onClick={this.handleItemClick}>Accueil </Menu.Item>  
-                            <Menu.Item as='a' href='#a-propos' name='a-propos'  active={activeItem === 'a-propos'} onClick={this.handleItemClick}>A Propos</Menu.Item>
-                            <Menu.Item as='a' href='#produits' name='produits' active={activeItem === 'produits'} onClick={this.handleItemClick}>Produits</Menu.Item>
-                            <Menu.Item as='a' href='#statistiques' name='statistiques' active={activeItem === 'statistiques'} onClick={this.handleItemClick}>Statistiques</Menu.Item>
-                            <Menu.Item as='a' href='#mission' name='mission' active={activeItem === 'mission'} onClick={this.handleItemClick}>Mission</Menu.Item>
-                            <Menu.Item as='a' href='#contact' name='contact' active={activeItem === 'contact'} onClick={this.handleItemClick}>Contact</Menu.Item>
+                            <Menu.Item as='a' href='#accueil' name='accueil'  active={activeItem === 'accueil'} onClick={this.handleItemClick}>
+                                Accueil 
+                            </Menu.Item>  
+                            <Menu.Item as='a' href='#a-propos' name='a-propos'  active={activeItem === 'a-propos'} onClick={this.handleItemClick}>
+                                A Propos
+                            </Menu.Item>
+                            <Menu.Item as='a' href='#produits' name='produits' active={activeItem === 'produits'} onClick={this.handleItemClick}>
+                                Produits
+                            </Menu.Item>
+                            <Menu.Item as='a' href='#statistiques' name='statistiques' active={activeItem === 'statistiques'} onClick={this.handleItemClick}>
+                                Statistiques
+                            </Menu.Item>
+                            <Menu.Item as='a' href='#mission' name='mission' active={activeItem === 'mission'} onClick={this.handleItemClick}>
+                                Mission
+                            </Menu.Item>
+                            <Menu.Item as='a' href='#contact' name='contact' active={activeItem === 'contact'} onClick={this.handleItemClick}>
+                                Contact
+                            </Menu.Item>
                             <Menu.Item position='right'>
-                                <Button as={Link} to="/responsable-etablissement/login"  color='green'>
-                                    Se connecter
+                                <Button as={Link} to="/responsable-etablissement/login" color='green'>
+                                    Espace Client
                                 </Button>
                             </Menu.Item>
                         </Container>  

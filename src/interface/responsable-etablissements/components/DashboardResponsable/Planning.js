@@ -19,7 +19,7 @@ export default function Planning() {
 
   return (
     <div>
-      {/* <div style={{}}>
+      {/* <div>
         <BadgeIcon color="green" icon={<DoneIcon/>} />
         <BadgeIcon color="#E67E22" icon={<HourglassBottomIcon/>} />
         <BadgeIcon color="#C0392B" icon={<ErrorIcon/>} />

@@ -17,10 +17,12 @@ const BadgeIconStyle = styled.div`
 export default function BadgeIcon(color, icon) {
 
   return (
+    <>
     <Badge style={{ backgroundColor: {color}}}>
       <BadgeIconStyle>
         {icon}
       </BadgeIconStyle>
     </Badge>
+    </>
   )
 }

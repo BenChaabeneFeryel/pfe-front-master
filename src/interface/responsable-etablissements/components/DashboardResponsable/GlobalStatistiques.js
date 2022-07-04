@@ -82,6 +82,14 @@ export default function GlobalStatistiques() {
                     max_qt_poubelle={data[1].max_qt_poubelle_papier} compteur_max_poubelle={data[1].compteur_max_poubelle_papier} 
                     compteur_min_poubelle={data[1].compteur_min_poubelle_papier} compteur_moy_poubelle={data[1].compteur_moy_poubelle_papier}              
                 />
+
+                <CardGlobalDechet color='rgb(229, 49, 84)' color2='#FF9999' color3='#F24C4C' type_dechet_nombre= 'canette'
+                    type="Canette"  nbr_poubelle={data[0].poubelle_canette} quantite_dechets={data[0].quantite_dechets_canette}
+                    pourcentage_qt_poubelle={data[1].pourcentage_qt_poubelle_canette} image={CanetteDechet} somme_qt_dechet={data[1].somme_qt_dechet_canette} 
+                    compteur_somme_poubelle={data[1].compteur_somme_poubelle_canette}  min_qt_poubelle={data[1].min_qt_poubelle_canette} 
+                    max_qt_poubelle={data[1].max_qt_poubelle_canette} compteur_max_poubelle={data[1].compteur_max_poubelle_canette} 
+                    compteur_min_poubelle={data[1].compteur_min_poubelle_canette} compteur_moy_poubelle={data[1].compteur_moy_poubelle_canette}              
+                />
           
                 <CardGlobalDechet color='rgb(0, 153, 74)' color2='#6ECB63' color3=' #3E7C17' type_dechet_nombre= 'composte'
                     type="Composte"  nbr_poubelle={data[0].poubelle_composte} quantite_dechets={data[0].quantite_dechets_composte}
@@ -91,13 +99,6 @@ export default function GlobalStatistiques() {
                     compteur_min_poubelle={data[1].compteur_min_poubelle_composte} compteur_moy_poubelle={data[1].compteur_moy_poubelle_composte}              
                 />
      
-                <CardGlobalDechet color='rgb(229, 49, 84)' color2='#FF9999' color3='#F24C4C' type_dechet_nombre= 'canette'
-                    type="Canette"  nbr_poubelle={data[0].poubelle_canette} quantite_dechets={data[0].quantite_dechets_canette}
-                    pourcentage_qt_poubelle={data[1].pourcentage_qt_poubelle_canette} image={CanetteDechet} somme_qt_dechet={data[1].somme_qt_dechet_canette} 
-                    compteur_somme_poubelle={data[1].compteur_somme_poubelle_canette}  min_qt_poubelle={data[1].min_qt_poubelle_canette} 
-                    max_qt_poubelle={data[1].max_qt_poubelle_canette} compteur_max_poubelle={data[1].compteur_max_poubelle_canette} 
-                    compteur_min_poubelle={data[1].compteur_min_poubelle_canette} compteur_moy_poubelle={data[1].compteur_moy_poubelle_canette}              
-                />
             </div>
 
             <br/>
