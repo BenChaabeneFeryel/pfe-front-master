@@ -1,6 +1,7 @@
 import React from 'react';
 import MapRegion from './mapRegion'
 import ChartVendsMois from "../components/Dashboard/Gestion Dechets/ventes/ChartVendusMois";
+import DechetsTotalesVendus from "../components/Dashboard/Gestion Dechets/ventes/DechetsTotalesVendus";
 import TotalDechetCollectéMois from "../components/Dashboard/TotalDechetCollect+®Mois";
 import DechetCollecteDepot from "../components/Dashboard/Gestion Dechets/collectes/DechetCollecteDepot"
 import '../css/Dashboard.css'
@@ -42,13 +43,16 @@ const Dashboard = () => {
             </Item>
             <div style={{display:'grid', gridTemplateColumns:"50% 50%"}}>
               <Item>
-                <Typography variant='h5' sx={{fontWeight:"600", fontFamily:"Fredoka"}}>Gestion de ventes des déchets</Typography>
+                <Typography variant='h5' color="primary" sx={{fontWeight:"600", fontFamily:"Fredoka"}}>
+                  Gestion de ventes des déchets
+                </Typography>
                 <br/>
+                <DechetsTotalesVendus/>
                 <ChartVendsMois/>                               
               </Item>           
                 
               <Item>
-                <Typography variant='h6' color="primary" sx={{fontWeight:"600", fontFamily:"Fredoka"}}>
+                <Typography variant='h5' color="primary" sx={{fontWeight:"600", fontFamily:"Fredoka"}}>
                   Gestion des déchets collectés
                 </Typography>
                 <br/>
@@ -60,7 +64,9 @@ const Dashboard = () => {
 
           <div>
             <Item>
-              <Typography variant='h6' color="primary" sx={{fontWeight:"600", fontFamily:"Fredoka"}}>Gestion des pannes</Typography>  
+              <Typography variant='h5' color="primary" sx={{fontWeight:"600", fontFamily:"Fredoka"}}>
+                Gestion des pannes
+              </Typography>  
               <br/>                    
               <Pannes/>
             </Item>
@@ -68,11 +74,11 @@ const Dashboard = () => {
 
           <div>
             <Item>
-              <Typography variant='h6' color="primary" sx={{fontWeight:"600", fontFamily:"Fredoka"}}>
+              <Typography variant='h5' color="primary" sx={{fontWeight:"600", fontFamily:"Fredoka"}}>
                 Gestion des poubelles des établissements
               </Typography>
               <br/>
-              <MapRegion/>
+              <MapRegion sx={{margin: "0 auto"}}/>
               <br/>   <br/>   <br/>   <br/>   <br/>   <br/>   <br/>   <br/>   <br/>   <br/>   <br/>
             </Item>
           </div>

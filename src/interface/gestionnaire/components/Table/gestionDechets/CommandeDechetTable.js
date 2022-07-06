@@ -3,14 +3,12 @@ import '../../../../../App.css'
 import Api from '../../../../../Global/ComponentsTable/Api';
 
  const show=[
-  ["Identifiant","id"],
-  ["client_dechet_id","client_dechet_id"],
-  ["quantite","quantite"],
-  ["montant_total","montant_total"],
-  ["date_commande","date_commande"],
-  ["date_livraison","date_livraison"],
-  ["Date de création","created_at"],
-  ["Date de mise à jour","updated_at"],
+  ["ID","id"],
+  ["ID Client","client_dechet_id"],
+  ["Type de paiement","type_paiment"],
+  ["Montant Total","montant_total"],
+  ["Date Commande","date_commande"],
+  ["Date Livraison","date_livraison"],
  ];
 
  export default function CommandeDechetTable() {
@@ -18,17 +16,17 @@ import Api from '../../../../../Global/ComponentsTable/Api';
 
   const url = `http://127.0.0.1:8000/api/commande-dechet`
   const columnDefs = [
-    { headerName: "Idetifiant", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
-    { headerName: "client", field: "client_dechet_id"},
-    { headerName: "quantite", field: "quantite"},
-    { headerName: "montant total", field: "montant_total"},
-    { headerName: "date commande", field: "date_commande"},
-    { headerName: "date livraison", field: "date_livraison"}
+    { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
+    { headerName: "ID Client", field: "client_dechet_id"},
+    { headerName: "Type de paiement", field: "type_paiment"},
+    { headerName: "Montant Total", field: "montant_total"},
+    { headerName: "Date Commande", field: "date_commande"},
+    { headerName: "Date Livraison", field: "date_livraison"}
   ]
 
   return (
     <div style={{width:"100%"}}>
-        <h2 align="center">commande dechet</h2>
+        <h2 align="center">Commandes de déchets</h2>
         <Api url={url} initialValue={initialValue} columnDefs={columnDefs} show={show}/>  
     </div>
   );

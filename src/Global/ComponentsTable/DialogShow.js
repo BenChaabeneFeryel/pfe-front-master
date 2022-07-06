@@ -62,9 +62,9 @@ export default function DialogZoneTravailShow({open,handleClose,data, show}) {
 
   return (
     <div>
-      <Button variant="outlined" onClick={open}>
+      {/* <Button variant="outlined" onClick={open}>
         Affichage des données
-      </Button>
+      </Button> */}
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"

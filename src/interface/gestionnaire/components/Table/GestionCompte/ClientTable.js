@@ -31,7 +31,7 @@ export default function ClientTable() {
 
   return (
     <div style={{width:"100%"}}>
-        <h2 align="center">Client dechet</h2>
+        <h2 align="center">Clients Déchets</h2>
         <Api url={url} initialValue={initialValue} columnDefs={columnDefs} show={show}/>  
     </div>
   );

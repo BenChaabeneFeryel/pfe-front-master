@@ -19,7 +19,7 @@ import Typography from '@mui/material/Typography';
 import Carousel from 'react-material-ui-carousel'
 import etage from '../../../Global/images/etage.svg'
 import NoDataSmall from '../../../Global/images/no-data.jfif'
-import NoData from '../../../Global/images/nodata.jpg'
+import search from '../../../Global/images/search.png'
 import Etablissement from '../../../Global/images/etablissement-icon.svg'
 import CirculairePourcentage from '../../../Global/CirculairePourcentage/CirculairePourcentage';
 import '../../../../src/App.css';
@@ -97,10 +97,10 @@ const MapRegion = () => {
     return ( 
       <Maps> 
         <div>
-          <ReactTooltip  place="top" effect="float"/>
+          <ReactTooltip place="top" effect="float"/>
           <div className='map'>    
             <StyledImagemap>
-              <svg xmlns="http://www.w3.org/2000/svg"  version="1.1" style={{backgroundColor:false , height:"650px"}}>
+              <svg xmlns="http://www.w3.org/2000/svg"  version="1.1" style={{backgroundColor:false, height:"650px"}}>
                 <g > 
                   <a data-tip='tunis' > 
                     <path id="TN-11" title="Tunis" className={style} onClick={() =>showMapData('Tunis')} d="M187.977,52.438L189.195,53.738L190.297,54.316L190.877,54.991L191.418,54.967L193.274,55.857L194.047,55.93L194.222,56.508L193.932,57.085L194.337,58.072L196.329,59.492L196.6,60.166L195.633,60.623L195.575,61.249L194.724,62.067L194.686,62.933L194.279,63.053L193.893,64.063L193.12,64.856L193.583,65.361L193.41,65.578L192.292,64.875L191.708,64.977L191.38,64.88L191.554,64.64L193.235,63.823L193.235,63.63L192.288,63.39L192.153,62.813L191.438,62.476L190.857,62.427L190.413,62.5L189.707,62.143L188.747,62.562L187.884,62.553L187.446,63.003L186.152,62.821L185.122,63.575L184.446,64.511L184.43,65.337L185.174,66.572L185.464,66.587L186.005,66.347L186.063,67.164L185.638,67.477L186.367,67.91L186.367,67.91L186.352,69.492L185.63,70.396L183.444,70.807L182.424,70.804L180.932,70.388L180.299,71.635L179.358,72.661L177.853,73.142L176.524,73.173L174.808,72.716L174.808,72.716L174.924,72.088L174.624,70.778L174.222,70.187L172.802,69.652L171.902,66.783L170.849,65.945L171.038,65.375L172.293,64.925L174.942,65.19L176.002,64.116L177.488,63.627L177.488,63.627L178.968,62.122L179.752,60.692L180.888,60.49L183.049,61.625L184.51,61.143L185.983,61.236L185.958,60.646L187.157,59.526L187.416,59.544L187.433,60.285L187.657,60.435L190.849,60.607L191.4,59.898L190.779,59.576L190.486,58.997L191.021,57.665L191.469,57.343L191.469,56.892L191.021,56.483L190.952,55.71L189.934,54.701L189.284,54.414L187.938,52.438L187.938,52.438z"/>
@@ -179,7 +179,7 @@ const MapRegion = () => {
               </svg>
             </StyledImagemap>   
             <div className='map-card'>
-              <div>Quantité de déchets collectés à {region}</div>
+              <Typography variant="h6" color="primary">Quantité de déchets collectés à {region}</Typography>
               {etablissements.length!==0?(
               <>
                 <div className='data'>
@@ -201,15 +201,15 @@ const MapRegion = () => {
                   </div> 
                 </div>
                 <br/>
-                <Card sx={{ backgroundColor:"white", border:"1px solid #383838"}} >
-                  <CardActions disableSpacing sx={{margin:"0px 18% 0"}}>
-                    <Typography variant="h5" color="primary">{etablissements.length} établissements</Typography>
+                <Card sx={{ backgroundColor:"white", border:"1px #383838"}} >
+                  <CardActions disableSpacing sx={{margin:"0px 25% 0"}}>
+                    <Typography variant="h5" color="primary">{etablissements.length} Etablissements</Typography>
                   </CardActions>
-                  <CardContent>
-                    <div className="scroller" style={{height:'340px'}}>                        
+                  <CardContent >
+                    <div className="scroller" style={{backgroundColor:"white", height:'340px'}}>                        
                       {etablissements.length!==0?(etablissements.map(etb =>
-                        <Accordion sx={{backgroundColor:'#D3D3D3',margin:"10px"}}>
-                          <AccordionSummary   expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                        <Accordion sx={{backgroundColor:'#E5FFCC', margin:"10px"}}>
+                          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                             <img width="30px" style={{paddingRight:"7px"}} src={Etablissement} alt='etablissement icon' />
                             <Typography>{`${etb.type_etablissement}`} {`${etb.nom_etablissement}`}</Typography>
                           </AccordionSummary>
@@ -237,8 +237,8 @@ const MapRegion = () => {
                               </div>                                                 
                               <div>   
                                 {etb.bloc_etablissements.length!==0?(etb.bloc_etablissements.map(blocsEtb =>
-                                  <Accordion sx={{backgroundColor:'#D3D3D3' }}>
-                                    <AccordionSummary   expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                                  <Accordion sx={{backgroundColor:'eggshell' }}>
+                                    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                                       <ListItemIcon>
                                         <ViewCarouselIcon  />
                                       </ListItemIcon>
@@ -247,16 +247,16 @@ const MapRegion = () => {
                                     <AccordionDetails>
                                       {blocsEtb.etage_etablissements.length!==0?(blocsEtb.etage_etablissements.map(etageEtb =>
                                         <Accordion>
-                                          <AccordionDetails  sx={{backgroundColor:"#E8E8E8"}}>
+                                          <AccordionDetails sx={{backgroundColor:"#E5FFCC"}}>
                                             {etageEtb.bloc_poubelles.length!==0?(etageEtb.bloc_poubelles.map(blocPoubelle =>
                                               <Accordion>
-                                                <AccordionSummary   expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" sx={{backgroundColor:"#F0F0F0"}}>
+                                                <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" sx={{backgroundColor:"eggshell"}}>
                                                   <ListItemIcon>
                                                     <DeleteIcon/>
                                                   </ListItemIcon>
-                                                  <span>Bloc poubelle {blocPoubelle.id}</span>
+                                                  <span>Bloc Poubelles {blocPoubelle.id}</span>
                                                 </AccordionSummary>
-                                                <AccordionDetails  sx={{backgroundColor:"#F0F0E0"}}>  
+                                                <AccordionDetails sx={{backgroundColor:"eggshell"}}>  
                                                   <Carousel>
                                                     {blocPoubelle.poubelles.length!==0?(blocPoubelle.poubelles.map(poubelle =>
                                                       <div>
@@ -264,34 +264,34 @@ const MapRegion = () => {
                                                         <p>{poubelle.nom}</p>
                                                         <p>Capacité : {poubelle.capacite_poubelle}</p>
                                                       </div>)
-                                                    ):(<div style={{marginTop:"10px", color:"red"}}>Pas de poubelles</div>)}
+                                                    ):(<div style={{marginTop:"10px", color:"black"}}>Pas de poubelles</div>)}
                                                   </Carousel>            
                                                 </AccordionDetails>
                                               </Accordion>  
                                               )
-                                              ):(<div style={{color:"red"}}>Pas de Blocs Poubelle</div>)
-                                              }
+                                              ):(<div style={{color:"black"}}>Pas de Blocs Poubelles</div>)
+                                            }
                                           </AccordionDetails>
                                         </Accordion>  
                                         )
-                                        ):(<div style={{color:"red"}}>Pas d'étages d'établissements</div>)
+                                        ):(<div style={{color:"black"}}>Pas d'étages d'établissements</div>)
                                       }
                                     </AccordionDetails>
                                   </Accordion>                     
                                 )
-                                ):(<div style={{color:"red"}}>Pas des Blocs d'établissements</div>)
+                                ):(<div style={{color:"black"}}>Pas des Blocs d'établissements</div>)
                               }
                               </div>
                             </div>
                           </AccordionDetails>
                       </Accordion>)
-                      ):(<div style={{color:"red"}}>Pas d'établissements</div>)}   
+                      ):(<div style={{color:"black"}}>Pas d'établissements</div>)}   
                     </div>
                   </CardContent>
                 </Card>
               </>
               ):(<>
-                  <img src={NoData} alt="not found data" style={{width:"100%",padding:"20px"}}/> 
+                  <img src={search} alt="data not found" style={{width:"60%",padding:"10px"}}/> 
                   <Typography variant="h6" color="error">Il n'y a pas d'établissements dans cette région</Typography>
                 </>)}
             </div>

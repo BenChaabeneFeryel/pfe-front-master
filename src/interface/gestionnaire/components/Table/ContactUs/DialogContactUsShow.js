@@ -17,26 +17,25 @@ export default function DialogContactUsShow({open,handleClose,data}) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-      <DialogTitle id="alert-dialog-title" sx={{backgroundColor: 'white', textAlign:"center", color:"green"}}><h1>affichage des données</h1></DialogTitle>
-        <DialogContent  sx={{backgroundColor: 'white'}}
-        >
-                <ul>
-                    <li><b>Identifiant:</b>{data.id}</li>
-                    <li><b>nom:</b>{data.nom}</li>
-                    <li><b>prenom:</b>{data.prenom}</li>
-                    <li><b>email:</b>{data.email}</li>
-                    <li><b>numero_telephone:</b>{data.numero_telephone}</li>
-                    <li><b>message:</b>{data.message}</li>
-                    <li><b>Date de création :</b>{data.created_at}</li>
-                    <li><b>Date de mise à jour:</b>{data.updated_at}</li>
-                </ul>
-        
+        <DialogTitle id="alert-dialog-title" sx={{backgroundColor: 'white', textAlign:"center", color:"green"}}>
+          <h1> Affichage des données</h1>
+        </DialogTitle>
+        <DialogContent sx={{backgroundColor: 'white'}}>
+          <ul>
+            <li><b>ID : </b>{data.id}</li>
+            <li><b>Nom :</b>{data.nom}</li>
+            <li><b>Prènom :</b>{data.prenom}</li>
+            <li><b>E-mail :</b>{data.email}</li>
+            <li><b>Numèro télèphone :</b>{data.numero_telephone}</li>
+            <li><b>Message :</b>{data.message}</li>
+            <li><b>Date de création :</b>{data.created_at}</li>
+            <li><b>Date de mise à jour :</b>{data.updated_at}</li>
+          </ul> 
         </DialogContent>
         <DialogActions sx={{backgroundColor: 'white'}}>
           <Button onClick={handleClose} sx={{color:"white"}} color="primary" variant="contained">
-          Annuler
+            Annuler
           </Button>
-
         </DialogActions>
       </Dialog>
     </div>

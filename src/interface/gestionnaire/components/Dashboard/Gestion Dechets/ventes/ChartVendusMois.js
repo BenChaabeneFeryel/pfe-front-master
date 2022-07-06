@@ -79,7 +79,7 @@ const ChartVendsMois = () => {
 
     return (
       <>
-        <Card>
+        <Card >
           <Container>
             <Typography variant="h6" id="traffic" align="center">
               Quantités vendus des déchets par mois

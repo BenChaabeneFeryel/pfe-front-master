@@ -24,22 +24,18 @@ export const linkDetailsGestionnaire = [
       ]},
     {id: 6, name: "Personnel", icon: <HiUsers/>,
       items: [
-        {id: 1,name: "Ouvriers", path:"/gestionnaire/personnel/ouvriers", icon: <HiUsers/>},
-        {id: 2,name: "Réparateurs poubelle", path:"/gestionnaire/personnel/reparateurs-poubelle", icon: <BsTools/>},
-        {id: 3,name: "Réparateurs camion", path:"/gestionnaire/personnel/reparateurs-camion", icon: <BsTools/>},
+        {id: 1, name: "Gestionnaires",path:"/gestionnaire/liste-gestionnaire", icon: <AdminPanelSettingsIcon/>},
+        {id: 2, name: "Ouvriers", path:"/gestionnaire/personnel/ouvriers", icon: <HiUsers/>},
+        {id: 3, name: "Réparateurs poubelles", path:"/gestionnaire/personnel/reparateurs-poubelle", icon: <BsTools/>},
+        {id: 4, name: "Réparateurs camions", path:"/gestionnaire/personnel/reparateurs-camion", icon: <BsTools/>},
       ]},
     {id: 7, name: "Clients", icon: <FaUser/>,
     items: [
-      {id: 1,name: "Responsables Etablissement", path:"/gestionnaire/clients/responsables-etablissements", icon: <FaUser/>},
+      {id: 1,name: "Responsables d'établissements", path:"/gestionnaire/clients/responsables-etablissements", icon: <FaUser/>},
       {id: 2,name: "Acheteurs de déchets", path:"/gestionnaire/clients/acheteurs-dechets", icon: <FaRecycle/>},
     ]
     },
-    {id: 8, name: "Commandes", icon: <RiShoppingBasketFill/>,
-    items: [
-      { id: 1,name: "Commandes Poubelles", path:"/gestionnaire/commandes-poubelles", icon: <VscTrash/>},
-      { id: 2,name: "Commandes Déchets", path:"/gestionnaire/commandes-dechets", icon: <FaRecycle/>},
-    ]
-    },
+    {id: 8, name: "Commandes Déchets", path:"/gestionnaire/commandes-dechets", icon: <FaRecycle/>},
     {id: 9, name: "Pannes", icon: <MdReportProblem/>,
     items: [
       { id: 1,name: "Pannes Poubelles", path:"/gestionnaire/pannes-poubelles", icon: <VscTrash/>},
@@ -47,7 +43,6 @@ export const linkDetailsGestionnaire = [
     ]
     },
     {id:10, name: "Calendrier",path:"/gestionnaire/calendrier", icon: <BsFillCalendarDateFill/>},
-    {id:11, name: "Gestionnaire liste",path:"/gestionnaire/liste-gestionnaire", icon: <AdminPanelSettingsIcon/>},
-    {id:12, name: "Contact-us",path:"/gestionnaire/contact-us", icon: <ContactsIcon/>},
+    {id:11, name: "Contactez-nous",path:"/gestionnaire/contact-us", icon: <ContactsIcon/>},
 
   ];

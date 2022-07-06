@@ -33,7 +33,7 @@ export default function GestionnaireTable() {
 
   return (
     <>
-        <h2 align="center">gestionnaire</h2>
+        <h2 align="center">Gestionnaires</h2>
         <Api url={url} initialValue={initialValue} columnDefs={columnDefs} show={show}/>  
     </>
   );

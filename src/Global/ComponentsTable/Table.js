@@ -70,19 +70,19 @@ return (
             <input type="text"  onInput={onQuickFilterChanged}  id="quickFilter"  placeholder="recherche..."  style={{backgroundColor:'#DCDCDC', border:'none',padding:"8px" }}/>
           </Item>
           <Item  style={{backgroundColor:'#DCDCDC'}}>
-                  <select style={{marginRight:'5px' , padding:"10px" , borderRadius:"5px",border:"none"}}  onChange={(e)=>onPaginationChange(e.target.value)}>
-                    <option value='5'>5</option>
-                    <option value='25'>25</option>
-                    <option value='50'>50</option>
-                    <option value='100'>100</option>
-                  </select>
-                <Button variant="contained" color="primary" onClick={onBtnExport} style={{marginRight:"5px"}}><FileDownloadIcon/></Button>
-                <Button variant="contained" color="success" onClick={handleClickOpen}><AddIcon/></Button>
+            <select style={{marginRight:'5px', padding:"10px", borderRadius:"5px", border:"none"}}  onChange={(e)=>onPaginationChange(e.target.value)}>
+              <option value='5'>5</option>
+              <option value='25'>25</option>
+              <option value='50'>50</option>
+              <option value='100'>100</option>
+            </select>
+            <Button variant="contained" color="primary" onClick={onBtnExport} style={{marginRight:"5px"}}><FileDownloadIcon/></Button>
+            <Button variant="contained" color="success" onClick={handleClickOpen}><AddIcon/></Button>
           </Item>
       </Grid>
       <div className="ag-theme-material" style={{ height: '415px',width:"100%"}}>
-          <AgGridReact ref={gridRef} debounceVerticalScrollbar='true' rowData={tableData} columnDefs={columnDefs}  defaultColDef={defaultColDef}
-            onGridReady={onGridReady} columnTypes={columnTypes} rowHeight={rowHeight} pagination={true} paginationPageSize={5}/>
+        <AgGridReact ref={gridRef} debounceVerticalScrollbar='true' rowData={tableData} columnDefs={columnDefs}  defaultColDef={defaultColDef}
+          onGridReady={onGridReady} columnTypes={columnTypes} rowHeight={rowHeight} pagination={true} paginationPageSize={5}/>
       </div>
   </div>
   )

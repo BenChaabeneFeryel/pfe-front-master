@@ -54,23 +54,27 @@ export default function Ouvrier() {
   return (
     <>
       <Box>
-      <Grid container spacing={3}>
-        <Grid item xs>
-           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-              <Tab label={<TableChartIcon/>} {...a11yProps(0)} />
-              <Tab label={<CreditCardIcon/>} {...a11yProps(1)} />
-              <Button sx={{ position: 'relative', width:"80px", marginRight:"10px", marginLeft:"20px"}} color="primary" variant="contained"><Link to ="/gestionnaire/camions" style={{color:"white"}}>Camion</Link></Button>
-              <Button sx={{ position: 'relative', width:"80px"}} color="primary" variant="contained"><Link to ="/gestionnaire/poubelles" style={{color:"white"}}>Zone</Link></Button>  
-            </Tabs>
+        <Grid container spacing={3}>
+          <Grid item xs>
+            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                <Tab label={<TableChartIcon/>} {...a11yProps(0)} />
+                <Tab label={<CreditCardIcon/>} {...a11yProps(1)} />
+                <Button sx={{ position: 'relative', width:"80px", marginRight:"10px", marginLeft:"20px"}} color="primary" variant="contained">
+                  <Link to ="/gestionnaire/camions" style={{color:"white"}}>Camions</Link>
+                </Button>
+                <Button sx={{ position: 'relative', width:"80px"}} color="primary" variant="contained">
+                  <Link to ="/gestionnaire/poubelles" style={{color:"white"}}>Zones</Link>
+                </Button>  
+              </Tabs>
+          </Grid>
         </Grid>
-      </Grid>
       </Box>
-        <TabPanel value={value} index={0}>
-          <OuvrierTable/>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-            <CarteOuvrier/>
-        </TabPanel>
+      <TabPanel value={value} index={0}>
+        <OuvrierTable/>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <CarteOuvrier/>
+      </TabPanel>
     </>    
   )
 }

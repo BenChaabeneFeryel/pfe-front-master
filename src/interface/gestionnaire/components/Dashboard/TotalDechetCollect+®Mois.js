@@ -77,10 +77,10 @@ const TotalDechetCollectéMois = () => {
 
     return (
         <div>
-            <Card >
+            <Card sx={{width: "85%",margin: "0 auto"}}>
                 <Container>
                     <Typography variant="h6" id="traffic" align="center">
-                        Quantitées collectées dechtes totales par mois/année
+                        Quantités de déchets collectées totales par mois/année
                     </Typography>
                     <Grid container  >
                         <Select
